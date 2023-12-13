@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
+import { Albums, Details, Login } from "./pages";
+import Navbar from "./components/Navbar/Navbar";
+import ProtectedRoutes from "./pages/ProtectedRoutes";
+import { Provider } from "react-redux";
+import store from "./redux/store";
+import React, { Suspense, lazy } from "react";
+
+const Dashboard = lazy(() => import("./pages/dashboard/Dashboard"));
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Provider store={store}>
+        <Navbar />
+        <Suspense fallback={<div>Loading...</div>}>
+          <Routes>
+            <Route element={<ProtectedRoutes />}>
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/details/:id" element={<Details />} />
+              <Route path="/albums/:id" element={<Albums />} />
+            </Route>
+            <Route path="/" element={<Login />} />
+          </Routes>
+        </Suspense>
+      </Provider>
+    </>
   );
 }
 

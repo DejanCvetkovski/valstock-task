@@ -1,0 +1,70 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 6rem;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+.heder-container {
+  margin-top: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+.heder-container h3 {
+  font-size: 2.2rem;
+  font-weight: 300;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-group small {
+  margin-bottom: 0.2rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.form-group input {
+  margin-bottom: 4rem;
+  padding: 1.4rem 1.6rem;
+  width: 250px;
+  border: 2px black solid;
+}
+
+.form-login input::placeholder {
+  font-size: 1.6rem;
+}
+
+.login-bottom {
+  height: 25rem;
+  width: 100%;
+  background-color: black;
+  position: absolute;
+  bottom: 0;
+}
+
+.camera-img {
+  position: absolute;
+  bottom: 0px;
+  z-index: 1;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi) {
+  .login-bottom {
+    height: 14rem;
+  }
+  .camera-img {
+    width: 40rem;
+  }
+}

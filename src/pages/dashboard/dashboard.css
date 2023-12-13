@@ -1,0 +1,41 @@
+.grid-container {
+  width: 1200px;
+  columns: 3;
+  padding: 3rem 0;
+}
+
+.image-container {
+  width: 100%;
+  position: relative;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.image-container img {
+  max-width: 100%;
+  max-height: inherit;
+}
+
+.overlay-btn {
+  width: 100%;
+  height: 0%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  border: none;
+  color: white;
+  overflow: hidden;
+  font-size: 1.4rem;
+  font-weight: bold;
+  transition: 0.5 ease;
+}
+
+.image-container:hover .overlay-btn {
+  height: 5rem;
+  cursor: pointer;
+}
